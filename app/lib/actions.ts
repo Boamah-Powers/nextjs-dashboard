@@ -73,10 +73,11 @@ export async function deleteInvoice(id: string) {
       DELETE FROM invoices WHERE id = ${id}
     `;
     revalidatePath("/dashboard/invoices");
-    return { message: 'Deleted Invoice.' };
+    
   } catch (error) {
-    return {
-      message: 'Failed to Delete Invoice.',
-    };
+    console.log('Failed to Delete Invoice.')
+    // return {
+    //   message: 'Failed to Delete Invoice.',
+    // };
   }
 }
